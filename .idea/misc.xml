@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Spring-sec-jwt" />
     <file type="web" url="file://$PROJECT_DIR$/springSecurity-first-project" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/springSecurity-first-project/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-sec-jwt/pom.xml" />
       </list>
     </option>
   </component>

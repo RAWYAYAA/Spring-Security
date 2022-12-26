@@ -33,10 +33,10 @@ public class SecurityConfig {
         http
                 .csrf()
                 .disable()
-                .authorizeHttpRequests()
+                .authorizeRequests()
                 .antMatchers("/**/auth/**")
                 .permitAll()
-                .antMatchers("http://localhost:8081/v1/saveProduit").hasAuthority("ROLE_ADMIN")
+                .antMatchers("/v1/saveProduit").hasAuthority("ROLE_ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -44,7 +44,7 @@ public class SecurityConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authenticationProvider(authenticationProvider())
-                .addFilterBefore( jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);;
+                .addFilterBefore( jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
     @Bean

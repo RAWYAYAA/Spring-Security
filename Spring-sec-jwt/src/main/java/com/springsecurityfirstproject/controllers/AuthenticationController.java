@@ -15,13 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
-public class AuthenticationController {
+public class
+
+AuthenticationController {
     private final AuthenticationManager authenticationManager;
     private final com.springsecurityfirstproject.dao.userDao userDao;
     private final JwtUtils jwtUtils;
     @PostMapping("/authenticate")
     public ResponseEntity<String> authenticate(@RequestBody AuthenticationRequest request){
-        new UsernamePasswordAuthenticationToken(request.getEmail(),request.getPassword());
+
+        new UsernamePasswordAuthenticationToken(request.getEmail(),request.getPassword());//a retenir
         final UserDetails user= userDao.findUserByEmail(request.getEmail());
         if (user != null){
             final String token=jwtUtils.generateToken(user);
